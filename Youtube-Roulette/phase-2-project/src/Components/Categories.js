@@ -5,8 +5,6 @@ import { Card, Checkbox } from 'semantic-ui-react'
 import { Redirect, Route } from 'react-router-dom'
 
 export default class Categories extends Component {
-
-   YOUR_API_KEY = "IzaSyBL7hy0u6_uaA_ZyIj2zDig7NEkX-60S0Q"
     
    randomNum = ''
    state = {
@@ -16,7 +14,7 @@ export default class Categories extends Component {
 
     handleChooseCategory = (category) => {
       // console.log(category)
-      fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=US&videoCategoryId=${category}&maxResults=50&key=${this.YOUR_API_KEY}`)
+      fetch(`https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=US&videoCategoryId=${category}&maxResults=50&key=${this.REACT_APP_API_KEY}`)
       .then(res => res.json())
       .then(chosenCategoryArray => {
         // console.log(chosenCategoryArray)

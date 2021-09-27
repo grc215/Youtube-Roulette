@@ -11,8 +11,6 @@ import { Button, Icon, Label, Header } from 'semantic-ui-react'
 
 
 class App extends React.Component {
-  
-  YOUR_API_KEY = "IzaSyBL7hy0u6_uaA_ZyIj2zDig7NEkX-60S0Q"
 
   state = {
     categories: [],
@@ -25,7 +23,7 @@ class App extends React.Component {
   }
   
   componentDidMount(){
-    fetch(`https://youtube.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=US&key=${this.YOUR_API_KEY}`)
+    fetch(`https://youtube.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=US&key=${this.REACT_APP_API_KEY}`)
     .then(res => res.json())
     .then(categoryObj => {
       // console.log(categoryObj)
